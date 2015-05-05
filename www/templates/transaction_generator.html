@@ -1,0 +1,12 @@
+<ion-view view-title="Transaction Generator">
+  <ion-content>
+    <h1>ID Code</h1>
+    <script type="text/javascript">
+      var options = {};
+      options.render = 'image';
+      options.text = {{qrText}}
+      $("#transaction_id").qrcode(options);
+    </script>
+    <div id="transaction_id"></div>
+  </ion-content>
+</ion-view>
