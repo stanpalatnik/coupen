@@ -43,5 +43,9 @@ angular.module('coupen.controllers', [])
     $scope.transaction_id = 225;
 })
 
+.controller('PlaylistsCtrl', function($scope) {
+
+})
+
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
