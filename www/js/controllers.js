@@ -1,8 +1,6 @@
 angular.module('coupen.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $ionicLoading, $timeout, hashid_salt) {
-      var hashid = new Hashids(hashid_salt);
-      $scope.qrText = hashid.encode(5,3496);
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -40,15 +38,9 @@ angular.module('coupen.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('QRController', function($scope) {
+    $scope.clientId = 5;
+    $scope.transaction_id = 225;
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
