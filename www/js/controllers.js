@@ -38,9 +38,10 @@ angular.module('coupen.controllers', [])
   };
 })
 
-.controller('QRController', function($scope) {
+.controller('QRController', function($scope, myWebSocket) {
     $scope.clientId = 5;
     $scope.transaction_id = 225;
+      myWebSocket.emit('customer-create', "fucking created");
 })
 
 .controller('PlaylistsCtrl', function($scope) {
