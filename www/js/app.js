@@ -21,7 +21,7 @@ angular.module('coupen', ['ionic', 'coupen.controllers', 'coupen-constants', 'co
 })
 
 .factory('myWebSocket', function (socketFactory) {
-    var myIoSocket = io.connect('localhost:7076');
+    var myIoSocket = io.connect('http://localhost:7076/');
 
     mySocket = socketFactory({
         ioSocket: myIoSocket

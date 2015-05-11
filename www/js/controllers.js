@@ -38,10 +38,17 @@ angular.module('coupen.controllers', [])
   };
 })
 
-.controller('QRController', function($scope, myWebSocket) {
-    $scope.clientId = 5;
-    $scope.transaction_id = 225;
-      myWebSocket.emit('customer-create', "fucking created");
+.controller('QRController', function ($scope, myWebSocket) {
+  $scope.clientId = 5;
+  $scope.transaction_id = 225;
+  myWebSocket.emit('client-join',
+      {
+        clientId: $scope.clientId
+      });
+  myWebSocket.on('customer-transaction-begin', function (msg) {
+    console.log("We got a live one with: " + msg);
+    myWebSocket.emit('customer-transaction-successful', "fucking successful for customer: " + msg);
+  });
 })
 
 .controller('PlaylistsCtrl', function($scope) {
