@@ -53,7 +53,8 @@ angular.module('coupen', ['ionic', 'coupen.controllers', 'coupen-constants', 'co
     url: "/transaction",
     views: {
       'menuContent': {
-        templateUrl: "templates/transaction_generator.html"
+        templateUrl: "templates/transaction_generator.html",
+        controller: "QRController"
       }
     }
   })
@@ -65,17 +66,7 @@ angular.module('coupen', ['ionic', 'coupen.controllers', 'coupen-constants', 'co
           controller: 'PlaylistsCtrl'
         }
       }
-    })
-
-  .state('app.single', {
-    url: "/playlists/:playlistId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
+    });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 });

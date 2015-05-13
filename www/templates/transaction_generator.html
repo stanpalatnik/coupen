@@ -1,6 +1,8 @@
 <ion-view view-title="Transaction Generator">
-  <ion-content ng-controller="QRController">
+  <ion-content>
     <h1>ID Code</h1>
-    <qr-code client-id="clientId" transaction-id="transaction_id" selector="'#transaction_id'"></qr-code>
+    <qr-code client-id="clientId" transaction-id="transaction_id"></qr-code>
+    <button onclick="window.plugins.socialsharing.shareViaFacebookWithPasteMessageHint('Message via Facebook', null /* img */, 'http://lazershare.com' , 'Paste it dude!', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Facebook (with errcallback)</button>
+    <button onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')">msg and link via Twitter</button>
   </ion-content>
 </ion-view>

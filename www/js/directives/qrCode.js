@@ -11,7 +11,7 @@ angular.module('coupen.directives.qrCode', [])
                transactionId: '=',
                selector: '='
            },
-           templateUrl: "templates/directives/qrCode.html",
+           template: "<div class=\"qrCode\"></div>",
            controller: function($scope, hashid_salt) {
                var qrOptions = {};
                qrOptions.background = "#50b7ff";
@@ -25,7 +25,7 @@ angular.module('coupen.directives.qrCode', [])
                qrOptions.osX = 0.5;
                qrOptions.mPosY = 0.5;
                qrOptions.mSize = 0.08;
-               qrOptions.size = 500;
+               qrOptions.size = 300;
                qrOptions.minVersion = 6;
                qrOptions.ecLevel = 'H';
                var hashid = new Hashids(hashid_salt);
@@ -34,7 +34,7 @@ angular.module('coupen.directives.qrCode', [])
                console.log(hashid.decode(text));
                console.log(qrOptions);
                qrOptions.text = text;
-               $($scope.selector).qrcode(qrOptions);
+               $(".qrCode").qrcode(qrOptions);
            }
        };
     });
