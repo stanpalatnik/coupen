@@ -51,6 +51,11 @@ angular.module('coupen.controllers', [])
   });
 })
 
+.controller('BarcodeController', function ($scope, myWebSocket) {
+    $scope.couponId = 639382000393;
+    $scope.format = "UPC";
+})
+
 .controller('PlaylistsCtrl', function($scope) {
 
 })

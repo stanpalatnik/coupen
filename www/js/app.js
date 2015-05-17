@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('coupen', ['ionic', 'coupen.controllers', 'coupen-constants', 'coupen.directives.qrCode', 'btford.socket-io'])
+angular.module('coupen', ['ionic', 'coupen.controllers', 'coupen-constants', 'coupen.directives.qrCode', 'coupen.directives.barcode', 'btford.socket-io'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -58,15 +58,24 @@ angular.module('coupen', ['ionic', 'coupen.controllers', 'coupen-constants', 'co
       }
     }
   })
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
+  .state('app.barcode', {
+    url: "/barcode",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/barcode_view.html",
+        controller: "BarcodeController"
       }
-    });
+    }
+  })
+  .state('app.playlists', {
+    url: "/playlists",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/playlists.html",
+        controller: 'PlaylistsCtrl'
+      }
+    }
+  });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 });
