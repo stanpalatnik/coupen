@@ -120,10 +120,10 @@ function drawBackgroundImage(qr, context, settings) {
 
     if (settings.mode === 3) {
         // Strip
-        qr.addBlank(0, st - pad, size, sb + pad);
+        //qr.addBlank(0, st - pad, size, sb + pad);
     } else {
         // Box
-        qr.addBlank(sl - pad, st - pad, sr + pad, sb + pad);
+        //qr.addBlank(sl - pad, st - pad, sr + pad, sb + pad);
     }
 
     context.drawImage(settings.image, sl*size, st*size, sw*size, sh*size);
