@@ -18,8 +18,8 @@ angular.module('coupen.directives.qrCode', [])
                qrOptions.render = 'canvas';
                qrOptions.radius = 0.5;
                qrOptions.label = "hh label";
-               qrOptions.mode = 2;
-               qrOptions.fill =  "#333333";
+               qrOptions.mode = 4;
+               qrOptions.fill =  document.getElementById("logo");
                qrOptions.fontcolor = "#ff9818";
                qrOptions.fontname =  "Ubuntu";
                qrOptions.osX = 0.5;

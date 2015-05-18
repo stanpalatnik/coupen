@@ -2,7 +2,9 @@
   <ion-content>
     <h1>ID Code</h1>
     <qr-code client-id="clientId" transaction-id="transaction_id"></qr-code>
+    <img id="logo" src="http://www.bestmanspeechestoasts.com/wp-content/themes/thesis/rotator/sample-4.jpg">
     <button onclick="window.plugins.socialsharing.shareViaFacebookWithPasteMessageHint('Message via Facebook', null /* img */, 'http://lazershare.com' , 'Paste it dude!', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Facebook (with errcallback)</button>
     <button onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')">msg and link via Twitter</button>
+    <button onclick="window.plugins.socialsharing.share('Optional message', 'Optional title', null, 'http://www.x-services.nl')">other network</button>
   </ion-content>
 </ion-view>
